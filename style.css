@@ -1,0 +1,18 @@
+.futbol{
+	color:dimgray;
+	text-align: center;
+}
+.imagen{
+	background: blueviolet;
+	text-align: right;
+}
+
+.basquet{
+	width: 100px;
+	height: 100px;
+}
+
+.DATOS-PERSONALES{
+	font-size: 25PX;
+	color: blueviolet;
+}
