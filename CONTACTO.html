@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+	CONTACTO.html - notas de modificaciones
+	- Se añadió lang="es" en <html> para mejorar la accesibilidad y la indexación por motores de búsqueda.
+	- Se corrigió la dirección de correo (mailto) añadiendo la arroba '@' faltante.
+	- Enlaces externos (WhatsApp y Telegram) ahora usan target="_blank" y rel="noopener noreferrer"
+		para abrir en nueva pestaña de forma segura (evita que la página abierta tenga acceso a window.opener).
+	- Se añadieron atributos aria-label en enlaces interactivos (tel, mail, WhatsApp, Telegram)
+		para que lectores de pantalla describan la acción correctamente.
+	Estos comentarios sirven para que otros desarrolladores entiendan el propósito de cada modificación.
+-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CONTACTO</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		body {
+			background: linear-gradient(135deg, #4e54c8, #8f94fb);
+			font-family: 'Segoe UI', Arial, sans-serif;
+			color: #222;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			max-width: 400px;
+			margin: 60px auto;
+			background: #fff;
+			border-radius: 16px;
+			box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+			padding: 32px 24px;
+		}
+		h1.futbol {
+			text-align: center;
+			color: #4e54c8;
+			margin-bottom: 24px;
+			letter-spacing: 2px;
+		}
+		.contact-list {
+			list-style: none;
+			padding: 0;
+			margin: 0 0 24px 0;
+		}
+		.contact-list li {
+			margin-bottom: 16px;
+			font-size: 1.1em;
+			display: flex;
+			align-items: center;
+		}
+		.contact-list li span {
+			margin-right: 10px;
+			font-size: 1.3em;
+		}
+		a.button {
+			display: block;
+			text-align: center;
+			background: #4e54c8;
+			color: #fff;
+			text-decoration: none;
+			padding: 12px 0;
+			border-radius: 8px;
+			font-weight: bold;
+			transition: background 0.2s;
+		}
+		a.button:hover {
+			background: #8f94fb;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="futbol">CONTACTOS</h1>
+		<ul class="contact-list">
+			<li><span>📞</span>Teléfono: <a href="tel:32457890" aria-label="Llamar al 3245 7890">3245 7890</a></li>
+			<li><span>💬</span>WhatsApp: <a href="https://wa.me/56783456" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp en nueva pestaña">5678 3456</a></li>
+			<li><span>🏠</span>Dirección: Sta. Clara la Laguna, Sololá</li>
+			<li><span>✉️</span>Correo: <a href="mailto:oscartzaj@gmail.com" aria-label="Enviar correo a oscartzaj arroba gmail punto com">oscartzaj@gmail.com</a></li>
+			<li><span>📱</span>Telegram: <a href="https://t.me/12345678" target="_blank" rel="noopener noreferrer" aria-label="Abrir Telegram en nueva pestaña">1234 5678</a></li>
+		</ul>
+		<a href="index.html" class="button">Ir a Inicio</a>
+	</div>
+</body>
+</html>
