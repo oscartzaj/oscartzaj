@@ -1,39 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>pagina de oscar</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Oscar Tzaj — Hoja de vida</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="futbol">Hoja de vida</h1>
+	<header class="site-header">
+		<div class="container header-grid">
+			<div class="brand">
+				<div class="logo" aria-hidden="true">ON</div>
+				<div class="brand-text">
+					<div class="name">Oscar Tzaj</div>
+					<div class="role">Perito Contador</div>
+				</div>
+			</div>
 
+			<nav class="main-nav" aria-label="Navegación principal">
+				<a href="index.html" class="active">Inicio</a>
+				<a href="funciones.html">Funciones</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
 
-<div class="imagen"><img src="gatos.jpg" class="basquet"></div>
+			<div class="header-actions">
+				<button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">🌗</button>
+				<button id="xmas-toggle" class="btn-icon btn-xmas" aria-pressed="false" aria-label="Activar modo navideño">🎄</button>
+			</div>
+		</div>
+	</header>
 
+	<main>
+		<section id="inicio" class="hero">
+			<div class="container hero-grid">
+				<div class="hero-left">
+					<h1 class="hero-title">Oscar Nicolas Santos Tzaj Chocoy</h1>
+					<p class="hero-sub">This is the way!</p>
+				</div>
 
-<div class="DATOS-PERSONALES">
-	<strong>DATOS PERSONALES</strong> <br>
-	Nombre: Lilia Marìa Ujpàn CVhàvez. <br>
-	Edad: 17 años <br>
-	Correo Electronico: ilyujpan35gmail.com <br>
-	Grado: 5to.PC <br>
-	Sexo: Femenino <br>
-</div>	<br>	
+				<aside class="hero-right card profile">
+					<div class="profile-media">
+						<img src="oscar.jpg" alt="Foto de perfil de Oscar" class="avatar">
+					</div>
+					<div class="profile-body">
+						<div class="card-body">
+							<p class="profile-summary">Estudiante de quinto año Perito Contador, orientado a la organización y el análisis financiero. Responsable, con interés en tecnología y mejora continua.</p>
 
-<div>
+							<ul class="facts" aria-label="Datos personales">
+								<li>
+									<span class="fact-label">Edad</span>
+									<span class="fact-value">18 años</span>
+								</li>
+								<li>
+									<span class="fact-label">Grado</span>
+									<span class="fact-value">Quinto Perito Contador</span>
+								</li>
+								<li>
+									<span class="fact-label">Sexo</span>
+									<span class="fact-value">Masculino</span>
+								</li>
+								<li>
+									<span class="fact-label">Correo</span>
+									<span class="fact-value"><a href="mailto:nicochocoy8@gmail.com">nicochocoy8@gmail.com</a></span>
+								</li>
+							</ul>
 
-	<strong> ESTUDIOS REALIZADOS</strong> <br>
-	Nivel primaro: EORM <br>
-	Nivel basico: "CEDCOM" <br>
-	Nivel diversificado: "CEDCOM" <br>
-</div>
+							<div class="profile-actions">
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</section>
 
-<a href="contacto.html">Ir a Contactos</a>
-<a href="Funciones.html">Ir a Funciones</a>
+		<section id="sobre-mi" class="container about card">
+			<div class="card-header"><h2>Sobre mí</h2></div>
+			<div class="card-body">
+				<p>Soy un estudiante de quinto año perito contador con interés por la organización, análisis financiero y la mejora continua. Busco oportunidades para aprender en entornos profesionales y colaborar en proyectos reales.</p>
+			</div>
+		</section>
 
+		<section id="estudios" class="container card">
+			<div class="card-header"><h2>Estudios realizados</h2></div>
+			<div class="card-body">
+				<ul class="studies-list">
+					<li><strong>Nivel primario:</strong> E.O.U.M. No.1</li>
+					<li><strong>Nivel básico:</strong> CEDCOM</li>
+					<li><strong>Nivel diversificado:</strong> CEDCOM</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="habilidades" class="container card skills">
+			<div class="card-header"><h2>Habilidades</h2></div>
+			<div class="card-body">
+				<div class="skill-grid">
+					<div class="skill">
+						<h3>Contabilidad</h3>
+						<div class="meter"><span style="width:85%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Excel / Análisis</h3>
+						<div class="meter"><span style="width:75%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Comunicación</h3>
+						<div class="meter"><span style="width:80%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Interés en TI</h3>
+						<div class="meter"><span style="width:60%"></span></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="cv" class="container card">
+			<div class="card-header"><h2>Currículum y datos principales</h2></div>
+			<div class="card-body">
+				<h3>Resumen profesional</h3>
+				<p>Soy estudiante de quinto año Perito Contador con experiencia práctica en trabajos escolares y proyectos de organización administrativa. Busco oportunidades para aplicar y ampliar mis conocimientos en contabilidad, control de gastos y análisis financiero.</p>
+				<h3>Grados y formación</h3>
+				<ul>
+					<li>Quinto Perito Contador — CEDCOM</li>
+					<li>Nivel básico y diversificado — CEDCOM</li>
+				</ul>
+				<h3>Pasatiempos y juegos</h3>
+				<p>Me interesan los retos lógicos, juegos de estrategia y pequeños proyectos de programación y diseño. En mi tiempo libre desarrollo ejercicios prácticos en Excel y estudio conceptos básicos de programación.</p>
+				<h3>Información adicional</h3>
+				<ul>
+					<li><strong>Disponibilidad:</strong> Tiempo parcial / Proyectos por encargo</li>
+					<li><strong>Idiomas:</strong> Español (nativo)</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="contacto" class="container card contact"> 
+			<div class="card-header"><h2>Contacto</h2></div>
+			<div class="card-body">
+				<p>Escríbeme: <a href="mailto:nicochocoy8@gmail.com">nicochocoy8@gmail.com</a></p>
+				<p>Teléfono: <a href="tel:+50232457890">+502 3245-7890</a></p>
+
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>© 2025 — Oscar Tzaj</div>
+			<div class="socials">
+				<a href="#" aria-label="Enlace LinkedIn">LinkedIn</a>
+				<a href="#" aria-label="Enlace GitHub">GitHub</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="main.js"></script>
+	<!-- Contenedor para decoraciones navideñas (creado dinámicamente por main.js) -->
+	<div id="xmas-decor" aria-hidden="true"></div>
 </body>
-<script src="main.js"></script>
-
 </html>

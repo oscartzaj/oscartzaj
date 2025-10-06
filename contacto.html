@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contacto — oscartzaj</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-grid">
+			<div class="brand">
+				<div class="logo" aria-hidden="true">ON</div>
+				<div class="brand-text">
+					<div class="name">Oscar Tzaj</div>
+					<div class="role">Perito Contador</div>
+				</div>
+			</div>
+
+			<nav class="main-nav" aria-label="Navegación principal">
+				<a href="index.html">Inicio</a>
+				<a href="funciones.html">Funciones</a>
+				<a href="contacto.html" class="active">Contacto</a>
+			</nav>
+
+			<div class="header-actions">
+				<button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">🌗</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="card contact-card grid-contact">
+			<div class="contact-info">
+				<h2>Contacto profesional</h2>
+				<p class="muted">Estoy disponible para consultas profesionales, servicios contables y asesoría. Completa el formulario o usa cualquiera de los medios de contacto abajo.</p>
+
+				<ul class="contact-list">
+					<li><strong>Teléfono:</strong> <a href="tel:+50232457890">+502 3245 7890</a></li>
+					<li><strong>WhatsApp:</strong> <a href="https://wa.me/50256783456" target="_blank" rel="noopener">+502 5678 3456</a></li>
+					<li><strong>Correo:</strong> <a href="mailto:nicochocoy8@gmail.com">nicochocoy8@gmail.com</a></li>
+					<li><strong>Dirección:</strong> Santa Clara la Laguna, Sololá</li>
+					<li><strong>Telegram:</strong> @oscartzaj</li>
+				</ul>
+
+				<h3>Horario de atención</h3>
+				<p>Lunes - Viernes: 09:00 — 18:00<br> Sábados: 09:00 — 13:00<br> Domingos: Cerrado</p>
+
+				<h3>Redes y portafolio</h3>
+				<p class="muted">Puedes revisar perfiles profesionales o dejar tu mensaje en LinkedIn:</p>
+				<div class="socials">
+					<a href="#" aria-label="LinkedIn">LinkedIn</a>
+					<a href="#" aria-label="GitHub">GitHub</a>
+				</div>
+			</div>
+
+			<div class="contact-form">
+								<h2>Enviar un mensaje</h2>
+								<!-- El formulario enviará un correo al propietario usando FormSubmit (https://formsubmit.co)
+										 No requiere backend propio: el servicio reenviará al correo nicochocoy8@gmail.com.
+										 Nota: puede que necesites verificar el correo en FormSubmit la primera vez. -->
+								<form id="contact-form" method="POST" action="https://formsubmit.co/nicochocoy8@gmail.com">
+								
+									<input type="hidden" name="_captcha" value="false">
+									<input type="hidden" name="_subject" value="Nuevo mensaje desde la web — Oscar Tzaj">
+									<input type="hidden" name="_next" value="contacto.html?sent=1">
+					<label for="name">Nombre</label>
+					<input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+					<label for="email">Correo</label>
+					<input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+
+					<label for="subject">Asunto</label>
+					<input id="subject" name="subject" type="text" placeholder="Asunto breve">
+
+					<label for="message">Mensaje</label>
+					<textarea id="message" name="message" placeholder="Escribe tu mensaje" rows="6" required></textarea>
+
+					<div style="display:flex;gap:.6rem;align-items:center;margin-top:.6rem">
+						<button type="submit" class="btn primary">Enviar mensaje</button>
+						<button type="reset" class="btn ghost">Limpiar</button>
+					</div>
+				</form>
+
+				<p class="muted" style="margin-top:.6rem">Nota: Este formulario es estático. Para recibir mensajes directamente, configura el atributo <code>action</code> con tu servicio (Formspree, Netlify Forms, etc.) o indícame si deseas que lo conecte a un servicio.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>© 2025 — Oscar Tzaj</div>
+			<div><a href="index.html">Volver al inicio</a></div>
+		</div>
+	</footer>
+
+	<script src="main.js"></script>
+		<script>
+			// Mostrar confirmación simple si el formulario redirige con ?sent=1
+			(function(){
+				const params = new URLSearchParams(location.search);
+				if(params.get('sent') === '1'){
+					const el = document.createElement('div');
+					el.textContent = 'Mensaje enviado correctamente. Gracias por contactar.';
+					el.style.cssText = 'padding:12px;border-radius:8px;background:#e6ffef;color:#064c2c;margin-bottom:12px;border:1px solid rgba(2,128,96,0.12)';
+					const container = document.querySelector('.contact-form');
+					if(container) container.insertBefore(el, container.firstChild);
+					// limpiar query string sin recargar
+					history.replaceState(null,'', location.pathname);
+				}
+			})();
+		</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- ============================================= -->
+	<!--            PÁGINA DE CALCULADORA            -->
+	<!-- ============================================= -->
+	
+	<!-- METADATOS BÁSICOS -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora</title>
+	
+	<!-- HOJA DE ESTILOS -->
+	<!-- Comparte los estilos con las demás páginas -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<header class="site-header">
+		<div class="container header-grid">
+			<div class="brand">
+				<div class="logo" aria-hidden="true">ON</div>
+				<div class="brand-text">
+					<div class="name">Oscar Tzaj</div>
+					<div class="role">Perito Contador</div>
+				</div>
+			</div>
+			<nav class="main-nav">
+				<a href="index.html">Inicio</a>
+				<a href="funciones.html" class="active">Funciones</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+			<div class="header-actions">
+				<button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">🌗</button>
+			</div>
+		</div>
+	</header>
+
+	<!-- ============================================= -->
+	<!--       CONTENEDOR PRINCIPAL CALCULADORA      -->
+	<!-- ============================================= -->
+	<div class="contenedor-calculadora">
+		<div class="calculadora calculator-app card">
+			<!-- DISPLAY principal -->
+			<div class="calc-shell">
+				<div class="calc-display">
+					<div class="calc-previous" aria-hidden="true"></div>
+					<div id="calc-screen" class="calc-screen" role="status" aria-live="polite">0</div>
+					<!-- Historial de operaciones -->
+					<div class="calc-history" aria-live="polite" aria-atomic="true">
+						<ul class="history-list" id="history-list">
+							<!-- items añadidos dinámicamente -->
+						</ul>
+					</div>
+				</div>
+				<!-- TECLADO -->
+				<div class="calc-keys" role="group" aria-label="Teclado de la calculadora">
+					<!-- fila 1: utilidades y primer operador -->
+					<button class="key key-clear" data-action="clear" aria-label="Limpiar">C</button>
+					<button class="key key-del" data-action="delete" aria-label="Borrar">⌫</button>
+					<button class="key" data-action="negate" aria-label="Cambiar signo">±</button>
+					<button class="key key-op" data-action="operator" data-value="/" aria-label="Dividir">÷</button>
+					<!-- fila 2 -->
+					<button class="key" data-action="number" data-value="7">7</button>
+					<button class="key" data-action="number" data-value="8">8</button>
+					<button class="key" data-action="number" data-value="9">9</button>
+					<button class="key key-op" data-action="operator" data-value="*" aria-label="Multiplicar">×</button>
+					<!	-- fila 3 -->
+					<button class="key" data-action="number" data-value="4">4</button>
+					<button class="key" data-action="number" data-value="5">5</button>
+					<button class="key" data-action="number" data-value="6">6</button>
+					<button class="key key-op" data-action="operator" data-value="-" aria-label="Restar">−</button>
+					<!-- fila 4 -->
+					<button class="key" data-action="number" data-value="1">1</button>
+					<button class="key" data-action="number" data-value="2">2</button>
+					<button class="key" data-action="number" data-value="3">3</button>
+					<button class="key key-op" data-action="operator" data-value="+" aria-label="Sumar">+</button>
+					<!-- fila 5: cero, decimal y igual -->
+					<button class="key" data-action="number" data-value="0">0</button>
+					<button class="key" data-action="decimal" data-value=".">.</button>
+					<div></div>
+					<button class="key key-eq" data-action="equals" aria-label="Igual">=</button>
+				</div>
+			</div>
+			<div class="navegacion" style="margin-top:10px;text-align:center;">
+				<a href="index.html" class="boton-inicio">← Ir a Inicio</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ============================================= -->
+	<!--             ARCHIVO JAVASCRIPT              -->
+	<!-- ============================================= -->
+	<!-- Incluye las funciones matemáticas de la calculadora -->
+	<script src="main.js"></script>
+</body>
+</html>
