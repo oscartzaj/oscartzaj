@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<!-- ============================================= -->
+	<!--            PÁGINA DE CALCULADORA            -->
+	<!-- ============================================= -->
+	
+	<!-- METADATOS BÁSICOS -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora</title>
+	
+	<!-- HOJA DE ESTILOS -->
+	<!-- Comparte los estilos con las demás páginas -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- ============================================= -->
+	<!--       CONTENEDOR PRINCIPAL CALCULADORA      -->
+	<!-- ============================================= -->
+	<div class="contenedor-calculadora">
+		<div class="calculadora">
+			
+			<!-- ============================================= -->
+			<!--               PANTALLA                      -->
+			<!-- ============================================= -->
+			<!-- Área de entrada de datos y visualización de resultados -->
+			<div class="pantalla">
+				
+				<!-- CAMPOS DE ENTRADA -->
+				<!-- Inputs para los números a operar -->
+				<div class="entradas">
+					<!-- Campo para el primer número -->
+					<input type="number" name="numero1" id="numero1" class="entrada-numero" placeholder="Primer número">
+					<!-- Campo para el segundo número -->
+					<input type="number" name="numero2" id="numero2" class="entrada-numero" placeholder="Segundo número">
+				</div>
+				
+				<!-- ÁREA DE RESULTADO -->
+				<!-- Muestra el resultado de las operaciones -->
+				<div class="contenedor-resultado">
+					<span class="etiqueta-resultado">Resultado:</span>
+					<!-- Elemento donde se muestra el resultado calculado -->
+					<strong id="Resultado" class="pantalla-resultado">0</strong>
+				</div>
+			</div>
+			
+			<!-- ============================================= -->
+			<!--             BOTONES DE OPERACIÓN            -->
+			<!-- ============================================= -->
+			<!-- Botones para ejecutar las operaciones matemáticas -->
+			<!-- Cada botón llama a una función específica en main.js -->
+			<div class="botones">
+				<!-- Botones originales: invocan directamente las funciones de operación -->
+				<button onclick="sumar()" class="boton-operacion suma">+</button>
+				<button onclick="restar()" class="boton-operacion resta">-</button>
+				<button onclick="multiplicar()" class="boton-operacion multiplicacion">×</button>
+				<button onclick="dividir()" class="boton-operacion division">÷</button>
+
+				<!-- Botón 'C' para limpiar los datos (estilo como el resto, colocado debajo) -->
+				<button onclick="limpiar()" class="boton-operacion borrar">C</button>
+			</div>
+			
+			<!-- ============================================= -->
+			<!--               NAVEGACIÓN                    -->
+			<!-- ============================================= -->
+			<!-- Enlace para regresar a la página principal -->
+			<div class="navegacion">
+				<a href="index.html" class="boton-inicio">← Ir a Inicio</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ============================================= -->
+	<!--             ARCHIVO JAVASCRIPT              -->
+	<!-- ============================================= -->
+	<!-- Incluye las funciones matemáticas de la calculadora -->
+	<script src="main.js"></script>
+</body>
+</html>

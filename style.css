@@ -1,18 +1,844 @@
-.futbol{
-	color:dimgray;
+/*
+===============================================
+              HOJA DE ESTILOS
+===============================================
+Este archivo contiene la versión optimizada de todos los estilos del sitio web personal
+de Lilia María Ujpán Chávez, aplicando componentes reutilizables.
+
+📋 ARQUITECTURA:
+1. Reset y configuración base
+2. Variables CSS personalizadas (Design System)
+3. Utilidades CSS reutilizables
+4. Componentes universales
+5. Layout principal
+6. Secciones específicas
+7. Responsive design
+===============================================
+*/
+
+/* ============================================= */
+/*              1. RESET Y BASE                */
+/* ============================================= */
+
+/* Reset CSS para consistencia entre navegadores */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #1e1e2e;
+	min-height: 100vh;
+	color: #cdd6f4;
+	line-height: 1.6;
+}
+
+/* ============================================= */
+/*         2. VARIABLES CSS (DESIGN SYSTEM)    */
+/* ============================================= */
+
+:root {
+	/* 🎨 PALETA DE COLORES */
+	--color-primario: #f38ba8;    /* Rosa principal */
+	--color-secundario: #89b4fa;  /* Azul secundario */
+	--color-acento: #cba6f7;     /* Púrpura de acento */
+	--color-fondo-oscuro: #1e1e2e;    /* Fondo principal */
+	--color-fondo-tarjeta: #313244;    /* Fondo de tarjetas */
+	--color-texto: #cdd6f4;       /* Texto principal */
+	--color-borde: #6c7086;     /* Bordes */
+	--color-hover: #45475a;      /* Estados hover */
+	
+	/* 📐 ESPACIADO CONSISTENTE */
+	--space-xs: 10px;
+	--space-sm: 15px;
+	--space-md: 20px;
+	--space-lg: 30px;
+	--space-xl: 40px;
+	--space-2xl: 60px;
+	
+	/* 🔧 PROPIEDADES DE DISEÑO */
+	--radius-sm: 10px;
+	--radius-md: 15px;
+	--radius-lg: 20px;
+	--radius-xl: 25px;
+	
+	/* ✨ EFECTOS VISUALES */
+	--shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 10px 30px rgba(0, 0, 0, 0.2);
+	--shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+	--transition: all 0.4s ease;
+
+	/* Blanco suave pastel (ahora rosa/beige pastel) para evitar blanco puro que puede dañar la vista */
+	--soft-white: #fff4f6; /* rosa pastel muy suave */
+}
+
+/* ============================================= */
+/*            3. UTILIDADES CSS                */
+/* ============================================= */
+
+/* 📏 ESPACIADO */
+.u-mb-sm { margin-bottom: var(--space-sm); }
+.u-mb-md { margin-bottom: var(--space-md); }
+.u-mb-lg { margin-bottom: var(--space-lg); }
+.u-mb-xl { margin-bottom: var(--space-xl); }
+.u-mb-2xl { margin-bottom: var(--space-2xl); }
+
+.u-p-sm { padding: var(--space-sm); }
+.u-p-md { padding: var(--space-md); }
+.u-p-lg { padding: var(--space-lg); }
+.u-p-xl { padding: var(--space-xl); }
+
+/* 🔄 LAYOUT */
+.u-flex { display: flex; }
+.u-flex-center { 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+}
+.u-flex-between { 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-between; 
+}
+.u-flex-column { 
+	display: flex; 
+	flex-direction: column; 
+}
+.u-grid-auto { 
+	display: grid; 
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+	gap: var(--space-lg);
+}
+
+/* 🎨 EFECTOS */
+.u-shadow-sm { box-shadow: var(--shadow-sm); }
+.u-shadow-md { box-shadow: var(--shadow-md); }
+.u-shadow-lg { box-shadow: var(--shadow-lg); }
+.u-radius-lg { border-radius: var(--radius-lg); }
+.u-transition { transition: var(--transition); }
+
+/* 🏷️ COLORES */
+.u-text-primary { color: var(--color-primario); }
+.u-text-secondary { color: var(--color-secundario); }
+.u-bg-primary { background: var(--color-primario); }
+.u-bg-secondary { background: var(--color-secundario); }
+.u-bg-card { background: var(--color-fondo-tarjeta); }
+
+/* ============================================= */
+/*          4. COMPONENTES UNIVERSALES         */
+/* ============================================= */
+
+/* 🃏 COMPONENTE CARD BASE */
+.card {
+	background: var(--color-fondo-tarjeta);
+	border-radius: var(--radius-lg);
+	padding: var(--space-lg);
+	box-shadow: var(--shadow-md);
+	border: 2px solid var(--color-borde);
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-lg);
+}
+
+.card--primary {
+	background: linear-gradient(135deg, var(--color-primario), #fab387);
+	color: var(--soft-white);
+}
+
+.card--secondary {
+	background: linear-gradient(135deg, var(--color-secundario), var(--color-acento));
+	color: var(--soft-white);
+}
+
+/* 🃏 CARD CON ICONO */
+.card-icon {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-md);
+}
+
+.card-icon__icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	flex-shrink: 0;
+	background: var(--color-hover);
+	color: var(--soft-white);
+}
+
+.card-icon__content h3 {
+	margin: 0 0 var(--space-xs) 0;
+	color: var(--color-primario);
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.card-icon__content p {
+	margin: 0;
+	color: var(--color-texto);
+	line-height: 1.6;
+}
+
+.card-icon__content a {
+	color: var(--color-secundario);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+.card-icon__content a:hover {
+	color: var(--color-primario);
+	text-decoration: underline;
+}
+
+/* 🔘 SISTEMA DE BOTONES */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-xs);
+	padding: var(--space-sm) var(--space-lg);
+	border: none;
+	border-radius: var(--radius-md);
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.btn--primary {
+	background: linear-gradient(135deg, var(--color-primario), #fab387);
+	color: var(--soft-white);
+}
+
+.btn--primary:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-md);
+}
+
+.btn--large {
+	padding: var(--space-md) var(--space-xl);
+	font-size: 1.1rem;
+}
+
+/* 🏷️ COMPONENTE SECTION */
+.section {
+	margin-bottom: var(--space-2xl);
+}
+
+.section__container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 var(--space-md);
+}
+
+.section__title {
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	color: var(--color-texto);
+	margin-bottom: var(--space-xl);
+	text-align: center;
+	justify-content: center;
+}
+
+/* ============================================= */
+/*            5. LAYOUT PRINCIPAL              */
+/* ============================================= */
+
+.contenedor-principal {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: var(--space-md);
+	min-height: 100vh;
+}
+
+/* ============================================= */
+/*              6. HERO SECTION                */
+/* ============================================= */
+
+.hero {
+	background: linear-gradient(135deg, var(--color-fondo-tarjeta), var(--color-hover));
+	border-radius: var(--radius-xl);
+	margin-bottom: var(--space-2xl);
+	padding: var(--space-2xl);
+	box-shadow: var(--shadow-lg);
+	border: 2px solid var(--color-borde);
+}
+
+.hero__contenido {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	gap: var(--space-2xl);
+	align-items: center;
+}
+
+.hero__foto {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+
+.hero__imagen-contenedor {
+	position: relative;
+	width: 250px;
+	height: 250px;
+}
+
+.hero__imagen {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 5px solid #fab387;
+	position: relative;
+	z-index: 2;
+}
+
+.hero__decoracion {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: calc(100% + 20px);
+	height: calc(100% + 20px);
+	background: linear-gradient(135deg, var(--color-primario), #fab387);
+	border-radius: 50%;
+	z-index: 1;
+	animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); opacity: 0.7; }
+	50% { transform: scale(1.05); opacity: 0.4; }
+}
+
+.hero__info {
+	padding-left: var(--space-md);
+}
+
+.hero__titulo {
+	margin-bottom: var(--space-lg);
+}
+
+.hero__saludo {
+	display: block;
+	font-size: 1.2rem;
+	color: var(--color-secundario);
+	font-weight: 400;
+	margin-bottom: var(--space-xs);
+}
+
+.hero__nombre {
+	display: block;
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	color: var(--color-primario);
+	font-weight: 800;
+	line-height: 1.1;
+}
+
+.hero__descripcion {
+	font-size: 1.2rem;
+	color: var(--color-texto);
+	margin-bottom: var(--space-xl);
+	line-height: 1.7;
+}
+
+.hero__stats {
+	display: flex;
+	gap: var(--space-lg);
+	flex-wrap: wrap;
+}
+
+.stat {
+	text-align: center;
+	padding: var(--space-md);
+	background: linear-gradient(135deg, #585b70, var(--color-borde));
+	border-radius: var(--radius-md);
+	border: 2px solid var(--color-secundario);
+	transition: var(--transition);
+	min-width: 80px;
+}
+
+.stat:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(137, 180, 250, 0.3);
+}
+
+.stat__numero {
+	display: block;
+	font-size: 2rem;
+	font-weight: 800;
+	color: var(--color-primario);
+	line-height: 1;
+}
+
+.stat__texto {
+	font-size: 0.9rem;
+	color: var(--color-texto);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* ============================================= */
+/*           7. TIMELINE EDUCATIVO             */
+/* ============================================= */
+
+.timeline {
+	position: relative;
+	padding-left: 50px;
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background: linear-gradient(to bottom, var(--color-secundario), var(--color-acento), var(--color-primario));
+	border-radius: 2px;
+}
+
+.timeline__item {
+	position: relative;
+	margin-bottom: var(--space-xl);
+	padding: var(--space-lg);
+	background: linear-gradient(135deg, var(--color-fondo-tarjeta), var(--color-hover));
+	border-radius: var(--radius-md);
+	border: 2px solid transparent;
+	transition: var(--transition);
+}
+
+.timeline__item:hover {
+	border-color: var(--color-secundario);
+	transform: translateX(10px);
+}
+
+.timeline__item--activo {
+	border-color: var(--color-primario);
+	background: linear-gradient(135deg, var(--color-fondo-tarjeta), #585b70);
+}
+
+.timeline__marker {
+	position: absolute;
+	left: -45px;
+	top: 25px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 4px solid var(--color-fondo-oscuro);
+	z-index: 2;
+}
+
+.timeline__marker--primario { background: #a6e3a1; }
+.timeline__marker--basico { background: var(--color-secundario); }
+.timeline__marker--diversificado { background: var(--color-primario); }
+
+.timeline__contenido h3 {
+	color: var(--color-primario);
+	font-size: 1.4rem;
+	margin-bottom: var(--space-xs);
+	font-weight: 700;
+}
+
+.timeline__institucion {
+	color: var(--color-secundario);
+	font-weight: 600;
+	margin-bottom: var(--space-sm);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.timeline__descripcion {
+	color: var(--color-texto);
+	line-height: 1.6;
+}
+
+/* ============================================= */
+/*        8. ESTILOS DE OTRAS PÁGINAS         */
+/* ============================================= */
+
+/* CALCULADORA */
+.contenedor-calculadora {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: var(--space-md);
+	background: var(--color-fondo-oscuro);
+}
+
+.calculadora {
+	background: var(--color-fondo-tarjeta);
+	border-radius: var(--radius-lg);
+	padding: var(--space-xl);
+	box-shadow: var(--shadow-lg);
+	border: 2px solid var(--color-borde);
+	max-width: 400px;
+	width: 100%;
+}
+
+/* Tema pastel azul-lila aplicado solo dentro de la calculadora */
+.contenedor-calculadora {
+	/* Paleta local: mezcla azul pastel con lila */
+	--color-primario: #6b9cff;    /* azul pastel (botones principales) */
+	--color-secundario: #bfa3ff;  /* lila suave */
+	--color-acento: #e6f0ff;      /* azul muy claro */
+	--color-fondo-tarjeta: #f3f7ff;/* fondo claro para la tarjeta de la calculadora */
+	--color-texto: #0f1724;       /* texto oscuro para buen contraste */
+	--color-borde: #9fb3d9;       /* borde suave */
+	--color-hover: #e9f1ff;       /* hover sutil */
+}
+
+/* Sobrescribir colores de botones dentro de la calculadora para mantener la temática */
+.contenedor-calculadora .suma { background: var(--color-secundario); }
+.contenedor-calculadora .resta { background: #9cc7ff; }
+.contenedor-calculadora .multiplicacion { background: var(--color-primario); }
+.contenedor-calculadora .division { background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); }
+
+/* Botón C dentro de la calculadora: tono lila oscuro para contraste */
+.contenedor-calculadora .boton-operacion.borrar {
+	background: #8b6cff;
+	color: var(--soft-white);
+}
+
+/* Asegurar que el contenedor de resultado use la paleta local */
+.contenedor-calculadora .contenedor-resultado { background: var(--color-acento); }
+.contenedor-calculadora .pantalla-resultado { color: var(--color-primario); }
+
+.pantalla {
+	margin-bottom: var(--space-lg);
+}
+
+.entradas {
+	display: flex;
+	gap: var(--space-sm);
+	margin-bottom: var(--space-md);
+	flex-direction: column;
+}
+
+.entrada-numero {
+	flex: 1;
+	padding: var(--space-sm);
+	border: 2px solid var(--color-borde);
+	border-radius: var(--radius-sm);
+	background: var(--color-hover);
+	color: var(--color-texto);
+	font-size: 1rem;
+	transition: var(--transition);
+}
+
+.entrada-numero:focus {
+	outline: none;
+	border-color: var(--color-secundario);
+	box-shadow: 0 0 10px rgba(137, 180, 250, 0.3);
+}
+
+.contenedor-resultado {
+	background: var(--color-hover);
+	border-radius: var(--radius-sm);
+	padding: var(--space-md);
 	text-align: center;
 }
-.imagen{
-	background: blueviolet;
-	text-align: right;
+
+.etiqueta-resultado {
+	color: var(--color-texto);
+	font-size: 0.9rem;
+	display: block;
+	margin-bottom: var(--space-xs);
 }
 
-.basquet{
-	width: 100px;
-	height: 100px;
+.pantalla-resultado {
+	color: var(--color-primario);
+	font-size: 2rem;
+	font-weight: 800;
 }
 
-.DATOS-PERSONALES{
-	font-size: 25PX;
-	color: blueviolet;
+
+.botones {
+	display: grid;
+	/* 4 columnas para botones principales y una fila adicional para acciones */
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--space-sm);
+	margin-bottom: var(--space-lg);
+}
+
+.boton-operacion {
+	padding: var(--space-md);
+	border: none;
+	border-radius: var(--radius-sm);
+	font-size: 2rem;
+	font-weight: 800;
+	cursor: pointer;
+	transition: var(--transition);
+	color: var(--soft-white);
+}
+
+/* Botón 'C' (borrar/reiniciar): colocado en la fila inferior, ocupa toda la fila */
+.boton-operacion.borrar {
+	background: #ff6b6b;
+	color: var(--soft-white);
+	font-size: 1.2rem;
+	grid-column: 1 / -1; /* ocupa todas las columnas del grid */
+	padding: calc(var(--space-sm) + 4px) var(--space-md);
+	border-radius: calc(var(--radius-sm) + 2px);
+}
+
+
+.suma { background: #a6e3a1; }
+.resta { background: #fab387; }
+.multiplicacion { background: var(--color-secundario); }
+.division { background: var(--color-primario); }
+
+.boton-operacion:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-sm);
+}
+
+/* (Se mantienen solo estilos básicos de botones; no hay estado 'active' en versión simple) */
+
+.navegacion {
+	text-align: center;
+}
+
+.boton-inicio {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	padding: var(--space-sm) var(--space-lg);
+	background: var(--color-borde);
+	color: var(--color-texto);
+	text-decoration: none;
+	border-radius: var(--radius-sm);
+	transition: var(--transition);
+}
+
+.boton-inicio:hover {
+	background: var(--color-secundario);
+	color: var(--soft-white);
+}
+
+/* PÁGINA DE CONTACTO */
+.contenedor-contacto {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--space-xl);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+}
+
+.encabezado-contacto {
+	text-align: center;
+}
+
+.titulo-contacto {
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	color: var(--color-primario);
+	margin-bottom: var(--space-md);
+}
+
+.subtitulo-contacto {
+	font-size: 1.2rem;
+	color: var(--color-texto);
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.cuadricula-contacto {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-lg);
+}
+
+.tarjeta-contacto {
+	background: var(--color-fondo-tarjeta);
+	border-radius: var(--radius-lg);
+	padding: var(--space-lg);
+	border: 2px solid var(--color-borde);
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
+}
+
+.tarjeta-contacto:hover {
+	transform: translateY(-5px);
+	border-color: var(--color-secundario);
+	box-shadow: var(--shadow-md);
+}
+
+.icono-tarjeta {
+	font-size: 2.5rem;
+	margin-bottom: var(--space-md);
+	display: block;
+}
+
+.titulo-tarjeta {
+	color: var(--color-primario);
+	font-size: 1.3rem;
+	margin-bottom: var(--space-sm);
+}
+
+.informacion-tarjeta {
+	color: var(--color-texto);
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.mensaje-contacto {
+	text-align: center;
+	background: var(--color-fondo-tarjeta);
+	border-radius: var(--radius-lg);
+	padding: var(--space-xl);
+	border: 2px solid var(--color-borde);
+	margin-top: 30px
+}
+
+.mensaje-contacto h2 {
+	color: var(--color-primario);
+	font-size: 2rem;
+	margin-bottom: var(--space-md);
+}
+
+.contenedor-navegacion {
+	display: flex;
+	justify-content: center;
+	gap: var(--space-lg);
+	flex-wrap: wrap;
+}
+
+.enlaces {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	padding: var(--space-sm) var(--space-lg);
+	background: var(--color-secundario);
+	color: white;
+	text-decoration: none;
+	border-radius: var(--radius-sm);
+	transition: var(--transition);
+	font-weight: 600;
+}
+
+.enlaces:hover {
+	background: var(--color-primario);
+	transform: translateY(-2px);
+}
+
+/* ============================================= */
+/*           9. RESPONSIVE DESIGN             */
+/* ============================================= */
+
+/* 📱 TABLETS (1024px y menos) */
+@media (max-width: 1024px) {
+	.hero__contenido {
+		grid-template-columns: 250px 1fr;
+		gap: var(--space-xl);
+	}
+	
+	.hero__nombre {
+		font-size: 2.8rem;
+	}
+}
+
+/* 📱 MÓVILES (768px y menos) */
+@media (max-width: 768px) {
+	.hero {
+		padding: var(--space-xl);
+	}
+	
+	.hero__contenido {
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+		text-align: center;
+	}
+	
+	.hero__imagen-contenedor {
+		width: 200px;
+		height: 200px;
+	}
+	
+	.hero__info {
+		padding-left: 0;
+	}
+	
+	.hero__stats {
+		justify-content: center;
+	}
+	
+	.u-grid-auto {
+		grid-template-columns: 1fr;
+	}
+	
+	.section__title {
+		font-size: 2rem;
+	}
+	
+	.timeline {
+		padding-left: 30px;
+	}
+	
+	.timeline__marker {
+		left: -35px;
+	}
+	
+	.cuadricula-contacto {
+		grid-template-columns: 1fr;
+	}
+	
+	.contenedor-navegacion {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* 📱 MÓVILES PEQUEÑOS (480px y menos) */
+@media (max-width: 480px) {
+	.contenedor-principal {
+		padding: var(--space-sm);
+	}
+	
+	.hero {
+		padding: var(--space-lg);
+	}
+	
+	.hero__imagen-contenedor {
+		width: 150px;
+		height: 150px;
+	}
+	
+	.section__container {
+		padding: 0 var(--space-sm);
+	}
+	
+	.card {
+		padding: var(--space-md);
+	}
+	
+	.card-icon {
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	.stat {
+		min-width: 60px;
+		padding: var(--space-sm);
+	}
+	
+	.stat__numero {
+		font-size: 1.5rem;
+	}
 }

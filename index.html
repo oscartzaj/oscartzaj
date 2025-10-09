@@ -1,39 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>pagina de oscar</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- METADATOS BÁSICOS -->
+	<!-- Codificación de caracteres para soporte completo de español -->
+	<meta charset="UTF-8">
+	<!-- Configuración del viewport para diseño responsivo -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- SEO: METADATOS PARA MOTORES DE BÚSQUEDA -->
+	<!-- Descripción que aparece en los resultados de búsqueda -->
+	<meta name="description" content="Portafolio personal de Lilia María Ujpán Chávez, estudiante de Perito Contador con pasión por la tecnología">
+	<!-- Palabras clave relevantes para SEO -->
+	<meta name="keywords" content="portafolio, perito contador, desarrollo web, estudiante, Guatemala">
+	<!-- Autor del sitio web -->
+	<meta name="author" content="Lilia María Ujpán Chávez">
+	
+	<!-- Título que aparece en la pestaña del navegador -->
+	<title>Lilia María Ujpán Chávez - Portafolio Personal</title>
+	
+	<!-- RECURSOS EXTERNOS -->
+	<!-- Hoja de estilos principal del sitio -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Preconexión a Google Fonts para optimizar carga -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+
 <body>
-<h1 class="futbol">Hoja de vida</h1>
+	<!-- ============================================= -->
+	<!--               PÁGINA PRINCIPAL              -->
+	<!-- ============================================= -->
+	<!-- Contenedor principal que envuelve todo el contenido de la página -->
+	<main class="contenedor-principal" role="main">
+		
+		<!-- ============================================= -->
+		<!--                SECCIÓN HERO                 -->
+		<!-- ============================================= -->
+		<!-- Sección principal de bienvenida con información destacada -->
+		<header class="hero" role="banner">
+			<div class="hero__contenido">
+				
+				<!-- IMAGEN DE PERFIL -->
+				<!-- Foto principal con decoración de fondo -->
+				<figure class="hero__foto">
+					<div class="hero__imagen-contenedor">
+						<!-- Imagen optimizada con carga lazy y dimensiones específicas -->
+						<img src="logo.jpeg" 
+							 alt="Fotografía de perfil de Lilia María Ujpàn Chávez" 
+							 class="hero__imagen"
+							 loading="lazy"
+							 width="250" 
+							 height="250">
+						<!-- Elemento decorativo de fondo (solo visual) -->
+						<div class="hero__decoracion" aria-hidden="true"></div>
+					</div>
+				</figure>
+				
+				<!-- INFORMACIÓN PRINCIPAL DEL PERFIL -->
+				<section class="hero__info">
+					<!-- Título principal de la página (H1 único) -->
+					<h1 class="hero__titulo">
+						<span class="hero__saludo">¡Hola! Soy</span>
+						<span class="hero__nombre">Lilia María Ujpán Chávez</span>
+					</h1>
+					<!-- Descripción profesional y personal -->
+					<p class="hero__descripcion">
+						Estudiante de 5to. Perito Contador con pasión por la tecnología y el aprendizaje continuo. 
+						Explorando el mundo del desarrollo web y las finanzas.
+					</p>
+					
+					<!-- ESTADÍSTICAS PERSONALES -->
+					<!-- Datos destacados en formato de tarjetas -->
+					<div class="hero__stats" role="region" aria-label="Estadísticas personales">
+						<!-- Edad con valor semántico -->
+						<article class="stat">
+							<data class="stat__numero" value="17">17</data>
+							<span class="stat__texto">años</span>
+						</article>
+						<!-- Grado académico actual -->
+						<article class="stat">
+							<span class="stat__numero">5to</span>
+							<span class="stat__texto">P.C.</span>
+						</article>
+						<!-- Número de proyectos realizados -->
+						<article class="stat">
+							<data class="stat__numero" value="3">3+</data>
+							<span class="stat__texto">proyectos</span>
+						</article>
+					</div>
+				</section>
+			</div>
+		</header>
 
+		<!-- ============================================= -->
+		<!--           INFORMACIÓN PERSONAL             -->
+		<!-- ============================================= -->
+		<section class="section" aria-labelledby="info-titulo">
+			<div class="section__container">
+				<!-- Título usando componente section__title -->
+				<h2 id="info-titulo" class="section__title">
+					<span class="section__icon">👤</span>
+					Información Personal
+				</h2>
+				
+				<!-- GRID DE TARJETAS DE INFORMACIÓN -->
+				<div class="u-grid-auto">
+					<!-- TARJETA DE EDAD - Usando componentes universales -->
+					<article class="card card-icon u-transition">
+						<div class="card-icon__icon u-bg-primary">🎂</div>
+						<div class="card-icon__content">
+							<h3>Edad</h3>
+							<p><data value="17">17 años</data></p>
+						</div>
+					</article>
+					
+					<!-- TARJETA DE EMAIL -->
+					<article class="card card-icon u-transition">
+						<div class="card-icon__icon u-bg-secondary">📧</div>
+						<div class="card-icon__content">
+							<h3>Email</h3>
+							<p><a href="mailto:ilyujpan35@gmail.com" class="u-text-secondary">ilyujpan35@gmail.com</a></p>
+						</div>
+					</article>
+					
+					<!-- TARJETA DE GRADO ACADÉMICO -->
+					<article class="card card-icon u-transition">
+						<div class="card-icon__icon u-bg-primary">🎓</div>
+						<div class="card-icon__content">
+							<h3>Grado Actual</h3>
+							<p>5to. Perito Contador</p>
+						</div>
+					</article>
+					
+					<!-- TARJETA DE GÉNERO -->
+					<article class="card card-icon u-transition">
+						<div class="card-icon__icon" style="background: var(--color-acento);">⚧️</div>
+						<div class="card-icon__content">
+							<h3>Género</h3>
+							<p>Femenino</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
 
-<div class="imagen"><img src="gatos.jpg" class="basquet"></div>
+		<!-- ============================================= -->
+		<!--          TRAYECTORIA EDUCATIVA             -->
+		<!-- ============================================= -->
+		<!-- Timeline cronológico usando componentes refactorizados -->
+		<section class="section" aria-labelledby="edu-titulo">
+			<div class="section__container">
+				<!-- Título usando componente section__title -->
+				<h2 id="edu-titulo" class="section__title">
+					<span class="section__icon">📚</span>
+					Trayectoria Educativa
+				</h2>
+				
+				<!-- TIMELINE EDUCATIVO -->
+				<!-- Lista cronológica de etapas educativas -->
+				<!-- Cada elemento incluye: marcador + contenido + descripción -->
+				<div class="timeline" role="list">
+					<!-- EDUCACIÓN PRIMARIA -->
+					<!-- Primera etapa del recorrido educativo -->
+					<article class="timeline__item" role="listitem">
+						<div class="timeline__marker timeline__marker--primario" aria-hidden="true"></div>
+						<div class="timeline__contenido">
+							<h3>Educación Primaria</h3>
+							<p class="timeline__institucion">EORM</p>
+							<p class="timeline__descripcion">
+								Fundamentos académicos sólidos que sentaron las bases para mi desarrollo educativo.
+							</p>
+						</div>
+					</article>
+					
+					<!-- EDUCACIÓN BÁSICA -->
+					<!-- Segunda etapa del recorrido educativo -->
+					<article class="timeline__item" role="listitem">
+						<div class="timeline__marker timeline__marker--basico" aria-hidden="true"></div>
+						<div class="timeline__contenido">
+							<h3>Educación Básica</h3>
+							<p class="timeline__institucion">INEBT</p>
+							<p class="timeline__descripcion">
+								Desarrollo de habilidades críticas y exploración de diferentes áreas del conocimiento.
+							</p>
+						</div>
+					</article>
+					
+					<!-- NIVEL DIVERSIFICADO (ACTUAL) -->
+					<!-- Etapa educativa actual - marcada como activa -->
+					<article class="timeline__item timeline__item--activo" role="listitem">
+						<div class="timeline__marker timeline__marker--diversificado" aria-hidden="true"></div>
+						<div class="timeline__contenido">
+							<h3>Nivel Diversificado</h3>
+							<p class="timeline__institucion">CEDCOM</p>
+							<p class="timeline__descripcion">
+								Especialización en Perito Contador, desarrollando competencias en contabilidad y administración.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
 
+		<!-- ============================================= -->
+		<!--             NAVEGACIÓN PRINCIPAL            -->
+		<!-- ============================================= -->
+		<!-- Enlaces a las otras páginas del sitio -->
+		<nav class="section" role="navigation" aria-label="Navegación principal">
+			<div class="u-flex u-flex-center" style="gap: var(--space-lg); flex-wrap: wrap;">
+				<!-- ENLACE A PÁGINA DE CONTACTO -->
+				<a href="contacto.html" class="card card-icon btn--large u-transition" style="text-decoration: none; color: inherit; flex: 1; min-width: 280px;">
+					<div class="card-icon__icon u-bg-primary">📞</div>
+					<div class="card-icon__content">
+						<h3>Contacto</h3>
+						<p>Información de contacto completa</p>
+					</div>
+				</a>
+				
+				<!-- ENLACE A CALCULADORA -->
+				<a href="funciones.HTML" class="card card-icon btn--large u-transition" style="text-decoration: none; color: inherit; flex: 1; min-width: 280px;">
+					<div class="card-icon__icon u-bg-secondary">🔢</div>
+					<div class="card-icon__content">
+						<h3>Calculadora</h3>
+						<p>Herramienta de cálculos básicos</p>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</main>
 
-<div class="DATOS-PERSONALES">
-	<strong>DATOS PERSONALES</strong> <br>
-	Nombre: Lilia Marìa Ujpàn CVhàvez. <br>
-	Edad: 17 años <br>
-	Correo Electronico: ilyujpan35gmail.com <br>
-	Grado: 5to.PC <br>
-	Sexo: Femenino <br>
-</div>	<br>	
-
-<div>
-
-	<strong> ESTUDIOS REALIZADOS</strong> <br>
-	Nivel primaro: EORM <br>
-	Nivel basico: "CEDCOM" <br>
-	Nivel diversificado: "CEDCOM" <br>
-</div>
-
-<a href="contacto.html">Ir a Contactos</a>
-<a href="Funciones.html">Ir a Funciones</a>
-
+	<!-- ============================================= -->
+	<!--               RECURSOS JAVASCRIPT            -->
+	<!-- ============================================= -->
+	<!-- Archivo principal de JavaScript que incluye:
+	     - Funciones de la calculadora -->
+	<script src="main.js"></script>
 </body>
-<script src="main.js"></script>
-
 </html>
