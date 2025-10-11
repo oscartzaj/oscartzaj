@@ -1,238 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<!-- METADATOS BÁSICOS -->
-	<!-- Codificación de caracteres para soporte completo de español -->
-	<meta charset="UTF-8">
-	<!-- Configuración del viewport para diseño responsivo -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- SEO: METADATOS PARA MOTORES DE BÚSQUEDA -->
-	<!-- Descripción que aparece en los resultados de búsqueda -->
-	<meta name="description" content="Portafolio personal de Lilia María Ujpán Chávez, estudiante de Perito Contador con pasión por la tecnología">
-	<!-- Palabras clave relevantes para SEO -->
-	<meta name="keywords" content="portafolio, perito contador, desarrollo web, estudiante, Guatemala">
-	<!-- Autor del sitio web -->
-	<meta name="author" content="Lilia María Ujpán Chávez">
-	
-	<!-- Título que aparece en la pestaña del navegador -->
-	<title>Lilia María Ujpán Chávez - Portafolio Personal</title>
-	
-	<!-- RECURSOS EXTERNOS -->
-	<!-- Hoja de estilos principal del sitio -->
-	<link rel="stylesheet" href="style.css">
-	<!-- Preconexión a Google Fonts para optimizar carga -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Oscar Tzaj — Hoja de vida</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<!-- ============================================= -->
-	<!--               PÁGINA PRINCIPAL              -->
-	<!-- ============================================= -->
-	<!-- Contenedor principal que envuelve todo el contenido de la página -->
-	<main class="contenedor-principal" role="main">
-		
-		<!-- ============================================= -->
-		<!--                SECCIÓN HERO                 -->
-		<!-- ============================================= -->
-		<!-- Sección principal de bienvenida con información destacada -->
-		<header class="hero" role="banner">
-			<div class="hero__contenido">
-				
-				<!-- IMAGEN DE PERFIL -->
-				<!-- Foto principal con decoración de fondo -->
-				<figure class="hero__foto">
-					<div class="hero__imagen-contenedor">
-						<!-- Imagen optimizada con carga lazy y dimensiones específicas -->
-						<img src="logo.jpeg" 
-							 alt="Fotografía de perfil de Lilia María Ujpàn Chávez" 
-							 class="hero__imagen"
-							 loading="lazy"
-							 width="250" 
-							 height="250">
-						<!-- Elemento decorativo de fondo (solo visual) -->
-						<div class="hero__decoracion" aria-hidden="true"></div>
-					</div>
-				</figure>
-				
-				<!-- INFORMACIÓN PRINCIPAL DEL PERFIL -->
-				<section class="hero__info">
-					<!-- Título principal de la página (H1 único) -->
-					<h1 class="hero__titulo">
-						<span class="hero__saludo">¡Hola! Soy</span>
-						<span class="hero__nombre">Lilia María Ujpán Chávez</span>
-					</h1>
-					<!-- Descripción profesional y personal -->
-					<p class="hero__descripcion">
-						Estudiante de 5to. Perito Contador con pasión por la tecnología y el aprendizaje continuo. 
-						Explorando el mundo del desarrollo web y las finanzas.
-					</p>
-					
-					<!-- ESTADÍSTICAS PERSONALES -->
-					<!-- Datos destacados en formato de tarjetas -->
-					<div class="hero__stats" role="region" aria-label="Estadísticas personales">
-						<!-- Edad con valor semántico -->
-						<article class="stat">
-							<data class="stat__numero" value="17">17</data>
-							<span class="stat__texto">años</span>
-						</article>
-						<!-- Grado académico actual -->
-						<article class="stat">
-							<span class="stat__numero">5to</span>
-							<span class="stat__texto">P.C.</span>
-						</article>
-						<!-- Número de proyectos realizados -->
-						<article class="stat">
-							<data class="stat__numero" value="3">3+</data>
-							<span class="stat__texto">proyectos</span>
-						</article>
-					</div>
-				</section>
+	<header class="site-header">
+		<div class="container header-grid">
+			<div class="brand">
+				<div class="logo" aria-hidden="true">OT</div>
+				<div class="brand-text">
+					<div class="name">Oscar Tzaj</div>
+					<div class="role">Perito Contador</div>
+				</div>
 			</div>
-		</header>
 
-		<!-- ============================================= -->
-		<!--           INFORMACIÓN PERSONAL             -->
-		<!-- ============================================= -->
-		<section class="section" aria-labelledby="info-titulo">
-			<div class="section__container">
-				<!-- Título usando componente section__title -->
-				<h2 id="info-titulo" class="section__title">
-					<span class="section__icon">👤</span>
-					Información Personal
-				</h2>
-				
-				<!-- GRID DE TARJETAS DE INFORMACIÓN -->
-				<div class="u-grid-auto">
-					<!-- TARJETA DE EDAD - Usando componentes universales -->
-					<article class="card card-icon u-transition">
-						<div class="card-icon__icon u-bg-primary">🎂</div>
-						<div class="card-icon__content">
-							<h3>Edad</h3>
-							<p><data value="17">17 años</data></p>
+			<nav class="main-nav" aria-label="Navegación principal">
+				<a href="index.html" class="active">Inicio</a>
+				<a href="funciones.html">Funciones</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+
+			<div class="header-actions">
+				<button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">🌗</button>
+				<button id="xmas-toggle" class="btn-icon btn-xmas" aria-pressed="false" aria-label="Activar modo navideño">🎄</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="inicio" class="hero">
+			<div class="container hero-grid">
+				<div class="hero-left">
+					<h1 class="hero-title">Oscar Nicolas Santos Tzaj Chocoy</h1>
+					<p class="hero-sub">This is the way!</p>
+				</div>
+
+				<aside class="hero-right card profile">
+					<div class="profile-media">
+						<img src="oscar.jpg" alt="Foto de perfil de Oscar" class="avatar">
+					</div>
+					<div class="profile-body">
+						<div class="card-body">
+							<p class="profile-summary">Estudiante de quinto año Perito Contador, orientado a la organización y el análisis financiero. Responsable, con interés en tecnología y mejora continua.</p>
+
+							<ul class="facts" aria-label="Datos personales">
+								<li>
+									<span class="fact-label">Edad</span>
+									<span class="fact-value">18 años</span>
+								</li>
+								<li>
+									<span class="fact-label">Grado</span>
+									<span class="fact-value">Quinto Perito Contador</span>
+								</li>
+								<li>
+									<span class="fact-label">Sexo</span>
+									<span class="fact-value">Masculino</span>
+								</li>
+								<li>
+									<span class="fact-label">Correo</span>
+									<span class="fact-value"><a href="mailto:nicochocoy8@gmail.com">nicochocoy8@gmail.com</a></span>
+								</li>
+							</ul>
+
+							<div class="profile-actions">
+							</div>
 						</div>
-					</article>
-					
-					<!-- TARJETA DE EMAIL -->
-					<article class="card card-icon u-transition">
-						<div class="card-icon__icon u-bg-secondary">📧</div>
-						<div class="card-icon__content">
-							<h3>Email</h3>
-							<p><a href="mailto:ilyujpan35@gmail.com" class="u-text-secondary">ilyujpan35@gmail.com</a></p>
-						</div>
-					</article>
-					
-					<!-- TARJETA DE GRADO ACADÉMICO -->
-					<article class="card card-icon u-transition">
-						<div class="card-icon__icon u-bg-primary">🎓</div>
-						<div class="card-icon__content">
-							<h3>Grado Actual</h3>
-							<p>5to. Perito Contador</p>
-						</div>
-					</article>
-					
-					<!-- TARJETA DE GÉNERO -->
-					<article class="card card-icon u-transition">
-						<div class="card-icon__icon" style="background: var(--color-acento);">⚧️</div>
-						<div class="card-icon__content">
-							<h3>Género</h3>
-							<p>Femenino</p>
-						</div>
-					</article>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<section id="sobre-mi" class="container about card">
+			<div class="card-header"><h2>Sobre mí</h2></div>
+			<div class="card-body">
+				<p>Soy un estudiante de quinto año perito contador con interés por la organización, análisis financiero y la mejora continua. Busco oportunidades para aprender en entornos profesionales y colaborar en proyectos reales.</p>
+			</div>
+		</section>
+
+		<section id="estudios" class="container card">
+			<div class="card-header"><h2>Estudios realizados</h2></div>
+			<div class="card-body">
+				<ul class="studies-list">
+					<li><strong>Nivel primario:</strong> E.O.U.M. No.1</li>
+					<li><strong>Nivel básico:</strong> CEDCOM</li>
+					<li><strong>Nivel diversificado:</strong> CEDCOM</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="habilidades" class="container card skills">
+			<div class="card-header"><h2>Habilidades</h2></div>
+			<div class="card-body">
+				<div class="skill-grid">
+					<div class="skill">
+						<h3>Contabilidad</h3>
+						<div class="meter"><span style="width:85%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Excel / Análisis</h3>
+						<div class="meter"><span style="width:75%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Comunicación</h3>
+						<div class="meter"><span style="width:80%"></span></div>
+					</div>
+					<div class="skill">
+						<h3>Interés en TI</h3>
+						<div class="meter"><span style="width:60%"></span></div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ============================================= -->
-		<!--          TRAYECTORIA EDUCATIVA             -->
-		<!-- ============================================= -->
-		<!-- Timeline cronológico usando componentes refactorizados -->
-		<section class="section" aria-labelledby="edu-titulo">
-			<div class="section__container">
-				<!-- Título usando componente section__title -->
-				<h2 id="edu-titulo" class="section__title">
-					<span class="section__icon">📚</span>
-					Trayectoria Educativa
-				</h2>
-				
-				<!-- TIMELINE EDUCATIVO -->
-				<!-- Lista cronológica de etapas educativas -->
-				<!-- Cada elemento incluye: marcador + contenido + descripción -->
-				<div class="timeline" role="list">
-					<!-- EDUCACIÓN PRIMARIA -->
-					<!-- Primera etapa del recorrido educativo -->
-					<article class="timeline__item" role="listitem">
-						<div class="timeline__marker timeline__marker--primario" aria-hidden="true"></div>
-						<div class="timeline__contenido">
-							<h3>Educación Primaria</h3>
-							<p class="timeline__institucion">EORM</p>
-							<p class="timeline__descripcion">
-								Fundamentos académicos sólidos que sentaron las bases para mi desarrollo educativo.
-							</p>
-						</div>
-					</article>
-					
-					<!-- EDUCACIÓN BÁSICA -->
-					<!-- Segunda etapa del recorrido educativo -->
-					<article class="timeline__item" role="listitem">
-						<div class="timeline__marker timeline__marker--basico" aria-hidden="true"></div>
-						<div class="timeline__contenido">
-							<h3>Educación Básica</h3>
-							<p class="timeline__institucion">INEBT</p>
-							<p class="timeline__descripcion">
-								Desarrollo de habilidades críticas y exploración de diferentes áreas del conocimiento.
-							</p>
-						</div>
-					</article>
-					
-					<!-- NIVEL DIVERSIFICADO (ACTUAL) -->
-					<!-- Etapa educativa actual - marcada como activa -->
-					<article class="timeline__item timeline__item--activo" role="listitem">
-						<div class="timeline__marker timeline__marker--diversificado" aria-hidden="true"></div>
-						<div class="timeline__contenido">
-							<h3>Nivel Diversificado</h3>
-							<p class="timeline__institucion">CEDCOM</p>
-							<p class="timeline__descripcion">
-								Especialización en Perito Contador, desarrollando competencias en contabilidad y administración.
-							</p>
-						</div>
-					</article>
-				</div>
+		<section id="cv" class="container card">
+			<div class="card-header"><h2>Currículum y datos principales</h2></div>
+			<div class="card-body">
+				<h3>Resumen profesional</h3>
+				<p>Soy estudiante de quinto año Perito Contador con experiencia práctica en trabajos escolares y proyectos de organización administrativa. Busco oportunidades para aplicar y ampliar mis conocimientos en contabilidad, control de gastos y análisis financiero.</p>
+				<h3>Grados y formación</h3>
+				<ul>
+					<li>Quinto Perito Contador — CEDCOM</li>
+					<li>Nivel básico y diversificado — CEDCOM</li>
+				</ul>
+				<h3>Pasatiempos y juegos</h3>
+				<p>Me interesan los retos lógicos, juegos de estrategia y pequeños proyectos de programación y diseño. En mi tiempo libre desarrollo ejercicios prácticos en Excel y estudio conceptos básicos de programación.</p>
+				<h3>Información adicional</h3>
+				<ul>
+					<li><strong>Disponibilidad:</strong> Tiempo parcial / Proyectos por encargo</li>
+					<li><strong>Idiomas:</strong> Español (nativo)</li>
+				</ul>
 			</div>
 		</section>
 
-		<!-- ============================================= -->
-		<!--             NAVEGACIÓN PRINCIPAL            -->
-		<!-- ============================================= -->
-		<!-- Enlaces a las otras páginas del sitio -->
-		<nav class="section" role="navigation" aria-label="Navegación principal">
-			<div class="u-flex u-flex-center" style="gap: var(--space-lg); flex-wrap: wrap;">
-				<!-- ENLACE A PÁGINA DE CONTACTO -->
-				<a href="contacto.html" class="card card-icon btn--large u-transition" style="text-decoration: none; color: inherit; flex: 1; min-width: 280px;">
-					<div class="card-icon__icon u-bg-primary">📞</div>
-					<div class="card-icon__content">
-						<h3>Contacto</h3>
-						<p>Información de contacto completa</p>
-					</div>
-				</a>
-				
-				<!-- ENLACE A CALCULADORA -->
-				<a href="funciones.HTML" class="card card-icon btn--large u-transition" style="text-decoration: none; color: inherit; flex: 1; min-width: 280px;">
-					<div class="card-icon__icon u-bg-secondary">🔢</div>
-					<div class="card-icon__content">
-						<h3>Calculadora</h3>
-						<p>Herramienta de cálculos básicos</p>
-					</div>
-				</a>
+		<section id="contacto" class="container card contact"> 
+			<div class="card-header"><h2>Contacto</h2></div>
+			<div class="card-body">
+				<p>Escríbeme: <a href="mailto:nicochocoy8@gmail.com">nicochocoy8@gmail.com</a></p>
+				<p>Teléfono: <a href="tel:+50232457890">+502 3245-7890</a></p>
+
 			</div>
-		</nav>
+		</section>
 	</main>
 
-	<!-- ============================================= -->
-	<!--               RECURSOS JAVASCRIPT            -->
-	<!-- ============================================= -->
-	<!-- Archivo principal de JavaScript que incluye:
-	     - Funciones de la calculadora -->
+	<footer class="site-footer">
+		<div class="container footer-grid">
+			<div>© 2025 — Oscar Tzaj</div>
+			<div class="socials">
+				<a href="#" aria-label="Enlace LinkedIn">LinkedIn</a>
+				<a href="#" aria-label="Enlace GitHub">GitHub</a>
+			</div>
+		</div>
+	</footer>
+
 	<script src="main.js"></script>
+	<!-- Contenedor para decoraciones navideñas (creado dinámicamente por main.js) -->
+	<div id="xmas-decor" aria-hidden="true"></div>
 </body>
 </html>

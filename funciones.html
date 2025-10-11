@@ -1,5 +1,5 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
 	<!-- ============================================= -->
 	<!--            PÁGINA DE CALCULADORA            -->
@@ -14,58 +14,75 @@
 	<!-- Comparte los estilos con las demás páginas -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
+	<header class="site-header">
+		<div class="container header-grid">
+			<div class="brand">
+				<div class="logo" aria-hidden="true">OT</div>
+				<div class="brand-text">
+					<div class="name">Oscar Tzaj</div>
+					<div class="role">Perito Contador</div>
+				</div>
+			</div>
+			<nav class="main-nav">
+				<a href="index.html">Inicio</a>
+				<a href="funciones.html" class="active">Funciones</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+			<div class="header-actions">
+				<button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">🌗</button>
+			</div>
+		</div>
+	</header>
+
 	<!-- ============================================= -->
 	<!--       CONTENEDOR PRINCIPAL CALCULADORA      -->
 	<!-- ============================================= -->
 	<div class="contenedor-calculadora">
-		<div class="calculadora">
-			
-			<!-- ============================================= -->
-			<!--               PANTALLA                      -->
-			<!-- ============================================= -->
-			<!-- Área de entrada de datos y visualización de resultados -->
-			<div class="pantalla">
-				
-				<!-- CAMPOS DE ENTRADA -->
-				<!-- Inputs para los números a operar -->
-				<div class="entradas">
-					<!-- Campo para el primer número -->
-					<input type="number" name="numero1" id="numero1" class="entrada-numero" placeholder="Primer número">
-					<!-- Campo para el segundo número -->
-					<input type="number" name="numero2" id="numero2" class="entrada-numero" placeholder="Segundo número">
+		<div class="calculadora calculator-app card">
+			<!-- DISPLAY principal -->
+			<div class="calc-shell">
+				<div class="calc-display">
+					<div class="calc-previous" aria-hidden="true"></div>
+					<div id="calc-screen" class="calc-screen" role="status" aria-live="polite">0</div>
+					<!-- Historial de operaciones -->
+					<div class="calc-history" aria-live="polite" aria-atomic="true">
+						<ul class="history-list" id="history-list">
+							<!-- items añadidos dinámicamente -->
+						</ul>
+					</div>
 				</div>
-				
-				<!-- ÁREA DE RESULTADO -->
-				<!-- Muestra el resultado de las operaciones -->
-				<div class="contenedor-resultado">
-					<span class="etiqueta-resultado">Resultado:</span>
-					<!-- Elemento donde se muestra el resultado calculado -->
-					<strong id="Resultado" class="pantalla-resultado">0</strong>
+				<!-- TECLADO -->
+				<div class="calc-keys" role="group" aria-label="Teclado de la calculadora">
+					<!-- fila 1: utilidades y primer operador -->
+					<button class="key key-clear" data-action="clear" aria-label="Limpiar">C</button>
+					<button class="key key-del" data-action="delete" aria-label="Borrar">⌫</button>
+					<button class="key" data-action="negate" aria-label="Cambiar signo">±</button>
+					<button class="key key-op" data-action="operator" data-value="/" aria-label="Dividir">÷</button>
+					<!-- fila 2 -->
+					<button class="key" data-action="number" data-value="7">7</button>
+					<button class="key" data-action="number" data-value="8">8</button>
+					<button class="key" data-action="number" data-value="9">9</button>
+					<button class="key key-op" data-action="operator" data-value="*" aria-label="Multiplicar">×</button>
+					<!	-- fila 3 -->
+					<button class="key" data-action="number" data-value="4">4</button>
+					<button class="key" data-action="number" data-value="5">5</button>
+					<button class="key" data-action="number" data-value="6">6</button>
+					<button class="key key-op" data-action="operator" data-value="-" aria-label="Restar">−</button>
+					<!-- fila 4 -->
+					<button class="key" data-action="number" data-value="1">1</button>
+					<button class="key" data-action="number" data-value="2">2</button>
+					<button class="key" data-action="number" data-value="3">3</button>
+					<button class="key key-op" data-action="operator" data-value="+" aria-label="Sumar">+</button>
+					<!-- fila 5: cero, decimal y igual -->
+					<button class="key" data-action="number" data-value="0">0</button>
+					<button class="key" data-action="decimal" data-value=".">.</button>
+					<div></div>
+					<button class="key key-eq" data-action="equals" aria-label="Igual">=</button>
 				</div>
 			</div>
-			
-			<!-- ============================================= -->
-			<!--             BOTONES DE OPERACIÓN            -->
-			<!-- ============================================= -->
-			<!-- Botones para ejecutar las operaciones matemáticas -->
-			<!-- Cada botón llama a una función específica en main.js -->
-			<div class="botones">
-				<!-- Botones originales: invocan directamente las funciones de operación -->
-				<button onclick="sumar()" class="boton-operacion suma">+</button>
-				<button onclick="restar()" class="boton-operacion resta">-</button>
-				<button onclick="multiplicar()" class="boton-operacion multiplicacion">×</button>
-				<button onclick="dividir()" class="boton-operacion division">÷</button>
-
-				<!-- Botón 'C' para limpiar los datos (estilo como el resto, colocado debajo) -->
-				<button onclick="limpiar()" class="boton-operacion borrar">C</button>
-			</div>
-			
-			<!-- ============================================= -->
-			<!--               NAVEGACIÓN                    -->
-			<!-- ============================================= -->
-			<!-- Enlace para regresar a la página principal -->
-			<div class="navegacion">
+			<div class="navegacion" style="margin-top:10px;text-align:center;">
 				<a href="index.html" class="boton-inicio">← Ir a Inicio</a>
 			</div>
 		</div>
